@@ -20,9 +20,9 @@ class ViewController: UIViewController {
     var timer: Timer!
     
     let eggTimes : [String : Int] = [
-        "Soft": 5,
-        "Medium": 8,
-        "Hard": 12
+        "Soft": 300,
+        "Medium": 480,
+        "Hard": 720
     ]
 
     override func viewDidLoad() {
@@ -60,16 +60,8 @@ class ViewController: UIViewController {
     
     func playAlarm() {
         let soundURL = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
-        if soundURL != nil {
-            do {
-                audioPlayer = try! AVAudioPlayer(contentsOf: soundURL!)
-            } catch {
-                print(error)
-            }
-        }
-        if audioPlayer != nil {
-            audioPlayer.play()
-        }
+        audioPlayer = try! AVAudioPlayer(contentsOf: soundURL!)
+        audioPlayer.play()
     }
 }
 
