@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
-    var timeRemaining: Int = 0
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    
+    var totalTime: Int = 0
+    var secondsPassed: Int = 0
+    
+    var audioPlayer: AVAudioPlayer!
     var timer: Timer!
     
     let eggTimes : [String : Int] = [
@@ -28,18 +35,41 @@ class ViewController: UIViewController {
         if (timer != nil) {
             timer.invalidate()
         }
+        
         let hardness = sender.currentTitle!
-        timeRemaining = eggTimes[hardness]! * 60
+        totalTime = eggTimes[hardness]!
+
+        progressBar.progress = 0.0
+        secondsPassed = 0
+        titleLabel.text = hardness
+        
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(step), userInfo: nil, repeats: true)
     }
     
     @objc func step() {
-        if timeRemaining > 0 {
-            timeRemaining -= 1
+        if secondsPassed < totalTime {
+            secondsPassed += 1
+            let percentageProgress = Float(secondsPassed)/Float(totalTime)
+            progressBar.progress = percentageProgress
         } else {
             timer.invalidate()
+            titleLabel.text = "Done!"
+            playAlarm()
         }
-        print("\(timeRemaining) seconds")
+    }
+    
+    func playAlarm() {
+        let soundURL = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+        if soundURL != nil {
+            do {
+                audioPlayer = try! AVAudioPlayer(contentsOf: soundURL!)
+            } catch {
+                print(error)
+            }
+        }
+        if audioPlayer != nil {
+            audioPlayer.play()
+        }
     }
 }
 

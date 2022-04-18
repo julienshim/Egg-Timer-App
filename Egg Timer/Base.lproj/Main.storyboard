@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -121,18 +122,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nv0-ug-gou">
                                         <rect key="frame" x="0.0" y="571.5" width="354" height="246.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="IWV-cp-ZQB">
-                                                <rect key="frame" x="8" y="8" width="338" height="230.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Bfh-jC-HbL">
+                                                <rect key="frame" x="0.0" y="120.5" width="354" height="6"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="5" id="k9b-d3-Wel"/>
+                                                </constraints>
+                                                <color key="progressTintColor" systemColor="systemYellowColor"/>
+                                                <color key="trackTintColor" systemColor="systemGrayColor"/>
+                                            </progressView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="IWV-cp-ZQB" firstAttribute="top" secondItem="nv0-ug-gou" secondAttribute="topMargin" id="7lw-9w-Uqi"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="IWV-cp-ZQB" secondAttribute="trailing" id="PmP-6I-fSD"/>
-                                            <constraint firstItem="IWV-cp-ZQB" firstAttribute="leading" secondItem="nv0-ug-gou" secondAttribute="leadingMargin" id="fw5-2p-J8O"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="IWV-cp-ZQB" secondAttribute="bottom" id="pYm-Gs-wfQ"/>
+                                            <constraint firstItem="Bfh-jC-HbL" firstAttribute="leading" secondItem="nv0-ug-gou" secondAttribute="leading" id="Udi-QT-I2w"/>
+                                            <constraint firstAttribute="trailing" secondItem="Bfh-jC-HbL" secondAttribute="trailing" id="lgk-yA-Fct"/>
+                                            <constraint firstItem="Bfh-jC-HbL" firstAttribute="centerY" secondItem="nv0-ug-gou" secondAttribute="centerY" id="tSV-M1-ZaV"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -141,12 +143,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.79607843137254897" green="0.94901960784313721" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cwu-DQ-2gk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BBv-3V-N2p"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="cwu-DQ-2gk" secondAttribute="bottom" id="c3T-kE-DjF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cwu-DQ-2gk" secondAttribute="trailing" constant="20" id="t4Y-Ao-zop"/>
-                            <constraint firstItem="cwu-DQ-2gk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xue-NB-aKW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cwu-DQ-2gk" secondAttribute="trailing" constant="20" id="Ft4-0c-9x7"/>
+                            <constraint firstItem="cwu-DQ-2gk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="L5c-47-p7I"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="cwu-DQ-2gk" secondAttribute="bottom" id="QJc-eT-O1H"/>
+                            <constraint firstItem="cwu-DQ-2gk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kvx-GM-NV1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressBar" destination="Bfh-jC-HbL" id="oez-od-zSs"/>
+                        <outlet property="titleLabel" destination="uWJ-6e-Jsj" id="zem-we-LsU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,5 +163,11 @@
         <image name="hard_egg" width="287.5" height="366"/>
         <image name="medium_egg" width="288" height="363"/>
         <image name="soft_egg" width="287" height="365"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

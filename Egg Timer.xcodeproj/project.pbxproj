@@ -13,6 +13,7 @@
 		CC6A0BC3280D064F00CE201F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC6A0BC1280D064F00CE201F /* Main.storyboard */; };
 		CC6A0BC5280D065000CE201F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC6A0BC4280D065000CE201F /* Assets.xcassets */; };
 		CC6A0BC8280D065000CE201F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC6A0BC6280D065000CE201F /* LaunchScreen.storyboard */; };
+		CC740FE4280D3676006BE33D /* alarm_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC740FE3280D3676006BE33D /* alarm_sound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CC6A0BC4280D065000CE201F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC6A0BC7280D065000CE201F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC6A0BC9280D065000CE201F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC740FE3280D3676006BE33D /* alarm_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alarm_sound.mp3; path = ../../../../../../Users/julienshim/Desktop/alarm_sound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				CC6A0BBF280D064F00CE201F /* ViewController.swift */,
 				CC6A0BC1280D064F00CE201F /* Main.storyboard */,
 				CC6A0BC4280D065000CE201F /* Assets.xcassets */,
+				CC740FE3280D3676006BE33D /* alarm_sound.mp3 */,
 				CC6A0BC6280D065000CE201F /* LaunchScreen.storyboard */,
 				CC6A0BC9280D065000CE201F /* Info.plist */,
 			);
@@ -127,6 +130,7 @@
 			files = (
 				CC6A0BC8280D065000CE201F /* LaunchScreen.storyboard in Resources */,
 				CC6A0BC5280D065000CE201F /* Assets.xcassets in Resources */,
+				CC740FE4280D3676006BE33D /* alarm_sound.mp3 in Resources */,
 				CC6A0BC3280D064F00CE201F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
