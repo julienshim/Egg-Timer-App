@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Egg-Timer-App
+//  Egg Timer
 //
-//  Created by Julien Shim on 4/16/22.
+//  Created by Julien Shim on 4/17/22.
 //
 
 import UIKit
